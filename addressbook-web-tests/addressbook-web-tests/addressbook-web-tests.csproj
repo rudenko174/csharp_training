@@ -59,10 +59,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountData.cs" />
+    <Compile Include="BirthDayAndAnniversaryData.cs" />
     <Compile Include="Circle.cs" />
     <Compile Include="Figure.cs" />
     <Compile Include="GeneralInfoData.cs" />
     <Compile Include="GroupDate.cs" />
+    <Compile Include="MailData.cs" />
+    <Compile Include="SecondaryInfoData.cs" />
     <Compile Include="Square.cs" />
     <Compile Include="Square_2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
