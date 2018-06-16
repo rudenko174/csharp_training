@@ -14,11 +14,12 @@
       <FileName>Circle.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WebAddressBookTests.Square">
+  <Class Name="WebAddressBookTests.SquareTest">
     <Position X="0.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Square.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Square_2.cs</FileName>
+      <NewMemberFileName>Square.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

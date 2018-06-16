@@ -61,12 +61,14 @@
     <Compile Include="AccountData.cs" />
     <Compile Include="Circle.cs" />
     <Compile Include="Figure.cs" />
+    <Compile Include="GeneralInfoData.cs" />
     <Compile Include="GroupDate.cs" />
     <Compile Include="Square.cs" />
-    <Compile Include="GroupCreationTests.cs" />
+    <Compile Include="Square_2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ContactCreationTests.cs" />
-    <Compile Include="WebAddressBookTests.cs" />
+    <Compile Include="GroupCreationTests.cs" />
+    <Compile Include="TelephoneData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
