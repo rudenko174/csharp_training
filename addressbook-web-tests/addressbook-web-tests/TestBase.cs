@@ -12,31 +12,13 @@ namespace WebAddressBookTests
 {
     public class TestBase
     {
+        protected ApplicationManager app;
         protected IWebDriver driver;
-        private StringBuilder verificationErrors;
-        protected string baseURL;
-
-        protected LoginHelper loginHelper;
-        protected NavigationHelper navigator;
-        protected GroupHelper groupHelper;
-        protected ContactHelper contactHelper;        
-
 
         [SetUp]
         public void SetupTest()
         {
-            FirefoxOptions options = new FirefoxOptions();
-            options.BrowserExecutableLocation = @"c:\Program Files\Mozilla Firefox\firefox.exe";
-            options.UseLegacyImplementation = true;
-            driver = new FirefoxDriver(options);
-            baseURL = "http://localhost";
-            verificationErrors = new StringBuilder();
-
-            loginHelper = new LoginHelper(driver);
-            navigator = new NavigationHelper(driver, baseURL);
-            groupHelper = new GroupHelper(driver);
-            contactHelper = new ContactHelper(driver);
-
+            app = new ApplicationManager();
         }
 
         [TearDown]
@@ -50,7 +32,7 @@ namespace WebAddressBookTests
             {
                 // Ignore errors if unable to close the browser
             }
-            Assert.AreEqual("", verificationErrors.ToString());
+            Assert.AreEqual("", app.verificationErrors.ToString());
         }
     }
 }

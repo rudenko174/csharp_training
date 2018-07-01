@@ -12,9 +12,9 @@ namespace WebAddressBookTests
         [Test]
         public void ContactCreationTest()
         {
-            navigator.GoToHomePage();
-            loginHelper.Login(new AccountData("admin", "secret"));
-            contactHelper.InitNewContactCreation();
+            app.Navigator.GoToHomePage();
+            app.Auth.Login(new AccountData("admin", "secret"));
+            app.Contacts.InitNewContactCreation();
 
             ContactInfoData general = new ContactInfoData("Firstname")
             {
@@ -42,9 +42,9 @@ namespace WebAddressBookTests
                 phone = "Phone",
                 notes = "Notes"
             };
-            contactHelper.FillContactInfoData(general);
-            contactHelper.SubmitContactCreation();
-            loginHelper.Logout();
+            app.Contacts.FillContactInfoData(general);
+            app.Contacts.SubmitContactCreation();
+            app.Auth.Logout();
         }
     }
 }
