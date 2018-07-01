@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebAddressBookTests
 {
-    class TelephoneData
+    public class TelephoneData
     {
         private string home = "";
         private string mobile = "";

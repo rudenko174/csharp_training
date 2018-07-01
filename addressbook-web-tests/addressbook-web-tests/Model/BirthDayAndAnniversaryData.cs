@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebAddressBookTests
 {
-    class BirthDayAndAnniversaryData
+    public class BirthDayAndAnniversaryData
     {
         private string birthday = "";
         private string birthmonth = "";
