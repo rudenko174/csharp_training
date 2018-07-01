@@ -59,15 +59,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountData.cs" />
-    <Compile Include="Circle.cs" />
-    <Compile Include="Figure.cs" />
     <Compile Include="ContactInfoData.cs" />
     <Compile Include="GroupDate.cs" />
-    <Compile Include="Square.cs" />
-    <Compile Include="Square_2.cs" />
+    <Compile Include="GroupRemovalTest.cs" />
+    <Compile Include="LoginHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ContactCreationTests.cs" />
     <Compile Include="GroupCreationTests.cs" />
+    <Compile Include="TestBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
