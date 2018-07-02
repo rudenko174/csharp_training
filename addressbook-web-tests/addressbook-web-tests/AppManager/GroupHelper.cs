@@ -16,6 +16,7 @@ namespace WebAddressBookTests
         {
         }
 
+
         public GroupHelper Create(GroupDate group)
         {
             manager.Navigator.GoToGroupsPage();
@@ -26,10 +27,10 @@ namespace WebAddressBookTests
             return this;
         }
 
-        public GroupHelper Remove()
+        public GroupHelper Remove(int p)
         {
             manager.Navigator.GoToGroupsPage();
-            SelectGroup(1);
+            SelectGroup(p);
             RemoveGroup();
             ReturnToGroupsPage();
             //app.Auth.Logout();

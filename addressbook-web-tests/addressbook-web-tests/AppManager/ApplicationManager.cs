@@ -27,7 +27,6 @@ namespace WebAddressBookTests
             options.UseLegacyImplementation = true;
             driver = new FirefoxDriver(options);
             baseURL = "http://localhost";
-            verificationErrors = new StringBuilder();
 
 
             loginHelper = new LoginHelper(this);
@@ -37,7 +36,7 @@ namespace WebAddressBookTests
         }
 
 
-        protected IWebDriver Driver
+        public IWebDriver Driver
         { get
             {
                 return driver;

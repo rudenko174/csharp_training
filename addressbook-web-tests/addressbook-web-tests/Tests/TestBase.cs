@@ -10,7 +10,6 @@ namespace WebAddressBookTests
     public class TestBase
     {
         protected ApplicationManager app;
-        protected IWebDriver driver;
 
         [SetUp]
         public void SetupTest()
