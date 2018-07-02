@@ -65,6 +65,8 @@
     <Compile Include="Data\GroupDate.cs" />
     <Compile Include="AppManager\GroupHelper.cs" />
     <Compile Include="AppManager\HelperBase.cs" />
+    <Compile Include="Tests\ContactModificationTests.cs" />
+    <Compile Include="Tests\GroupModificationTests.cs" />
     <Compile Include="Tests\GroupRemovalTest.cs" />
     <Compile Include="AppManager\LoginHelper.cs" />
     <Compile Include="AppManager\NavigationHelper.cs" />

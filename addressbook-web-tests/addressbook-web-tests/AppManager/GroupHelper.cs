@@ -16,7 +16,6 @@ namespace WebAddressBookTests
         {
         }
 
-
         public GroupHelper Create(GroupDate group)
         {
             manager.Navigator.GoToGroupsPage();
@@ -24,6 +23,30 @@ namespace WebAddressBookTests
             FillGroupForm(group);
             SubmitGroupCreation();
             manager.Navigator.GoToGroupsPage();
+            return this;
+        }
+
+
+        public GroupHelper Modify(int p, GroupDate newDate)
+        {
+            manager.Navigator.GoToGroupsPage();
+            SelectGroup(p);
+            InitGroupModification();
+            FillGroupForm(newDate);
+            SubmitGroupModification();
+            manager.Navigator.GoToGroupsPage();
+            return this;
+        }
+
+        public GroupHelper InitGroupModification()
+        {
+            driver.FindElement(By.Name("edit")).Click();
+            return this;
+        }
+
+        public GroupHelper SubmitGroupModification()
+        {
+            driver.FindElement(By.Name("update")).Click();
             return this;
         }
 

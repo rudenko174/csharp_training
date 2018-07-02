@@ -39,11 +39,7 @@ namespace WebAddressBookTests
                 notes = "Notes"
             };
 
-            app.Contacts
-                .InitNewContactCreation()
-                .FillContactInfoData(general)
-                .SubmitContactCreation();
-            app.Auth.Logout();
+            app.Contacts.Create(general);
         }
     }
 }
