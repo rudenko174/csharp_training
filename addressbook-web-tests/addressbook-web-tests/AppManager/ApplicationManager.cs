@@ -12,7 +12,6 @@ namespace WebAddressBookTests
     public class ApplicationManager
     {
         protected IWebDriver driver;
-        private StringBuilder verificationErrors;
         protected string baseURL;
 
         protected LoginHelper loginHelper;
@@ -33,7 +32,19 @@ namespace WebAddressBookTests
             loginHelper = new LoginHelper(driver);
             navigator = new NavigationHelper(driver, baseURL);
             groupHelper = new GroupHelper(driver);
-            contactHelper = new ContactHelper(driver);     
+            contactHelper = new ContactHelper(driver);
+        }
+
+        public void Stop()
+        {
+            try
+            {
+                driver.Quit();
+            }
+            catch (Exception)
+            {
+                // Ignore errors if unable to close the browser
+            }
         }
 
         public LoginHelper Auth
