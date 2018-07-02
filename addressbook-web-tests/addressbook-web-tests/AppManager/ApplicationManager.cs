@@ -14,6 +14,7 @@ namespace WebAddressBookTests
         protected IWebDriver driver;
         protected string baseURL;
 
+
         protected LoginHelper loginHelper;
         protected NavigationHelper navigator;
         protected GroupHelper groupHelper;
@@ -29,10 +30,18 @@ namespace WebAddressBookTests
             verificationErrors = new StringBuilder();
 
 
-            loginHelper = new LoginHelper(driver);
-            navigator = new NavigationHelper(driver, baseURL);
-            groupHelper = new GroupHelper(driver);
-            contactHelper = new ContactHelper(driver);
+            loginHelper = new LoginHelper(this);
+            navigator = new NavigationHelper(this, baseURL);
+            groupHelper = new GroupHelper(this);
+            contactHelper = new ContactHelper(this);
+        }
+
+
+        protected IWebDriver Driver
+        { get
+            {
+                return driver;
+            }
         }
 
         public void Stop()

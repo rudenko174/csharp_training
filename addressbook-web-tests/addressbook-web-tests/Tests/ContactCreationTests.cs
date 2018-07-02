@@ -12,10 +12,6 @@ namespace WebAddressBookTests
         [Test]
         public void ContactCreationTest()
         {
-            app.Navigator.GoToHomePage();
-            app.Auth.Login(new AccountData("admin", "secret"));
-            app.Contacts.InitNewContactCreation();
-
             ContactInfoData general = new ContactInfoData("Firstname")
             {
                 Middlename = "Middlename",
@@ -42,8 +38,11 @@ namespace WebAddressBookTests
                 phone = "Phone",
                 notes = "Notes"
             };
-            app.Contacts.FillContactInfoData(general);
-            app.Contacts.SubmitContactCreation();
+
+            app.Contacts
+                .InitNewContactCreation()
+                .FillContactInfoData(general)
+                .SubmitContactCreation();
             app.Auth.Logout();
         }
     }
