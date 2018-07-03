@@ -14,8 +14,8 @@ namespace WebAddressBookTests
         public void GroupModificationTest()
         {
             GroupDate newDate = new GroupDate("Zoo_last");
-            newDate.Header = "222";
-            newDate.Footer = "333";
+            newDate.Header = null;
+            newDate.Footer = null;
 
             app.Groups.Modify(1, newDate);
         }
