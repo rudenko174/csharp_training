@@ -14,10 +14,10 @@ namespace WebAddressBookTests
         public void ContactModificationTest()
         {
             ContactInfoData newContactDate = new ContactInfoData("Zoo_New");
-            newContactDate.Middlename = "222";
-            newContactDate.Lastname = "333";
+            newContactDate.Middlename = "Zoo_New";
+            newContactDate.Lastname = "Zoo_New";
 
-            app.Contacts.Modify(1, newContactDate);
+            app.Contacts.Modify(newContactDate);
         }
     }
 }

@@ -25,8 +25,7 @@ namespace WebAddressBookTests
             return this;
         }
 
-
-        public ContactHelper Modify(int p, ContactInfoData newContactDate)
+        public ContactHelper Modify(ContactInfoData newContactDate)
         {
             InitContactModification();
             FillContactInfoData(newContactDate);
@@ -35,15 +34,25 @@ namespace WebAddressBookTests
             return this;
         }
 
-        public ContactHelper SubmitContactModification()
-        {
-            driver.FindElement(By.Name("update")).Click();
+        public ContactHelper Remove(int p)
+        {            
+            driver.FindElements(By.XPath("//input[@name='selected[]']"))[0].Click();
+            driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
+            driver.SwitchTo().Alert().Accept();
+            manager.Navigator.GoToHomePage();
             return this;
         }
 
         public ContactHelper InitContactModification()
         {
-            driver.FindElements(By.XPath("//input[@name='selected[]']"))[0].Click();
+            driver.FindElements(By.XPath("//img[@title='Edit']"))[3].Click();
+            manager.Navigator.GoToHomePage();
+            return this;
+        }
+
+        public ContactHelper SubmitContactModification()
+        {
+            driver.FindElement(By.Name("update")).Click();
             return this;
         }
 

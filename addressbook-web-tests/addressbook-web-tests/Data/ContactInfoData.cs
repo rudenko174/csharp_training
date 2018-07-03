@@ -30,11 +30,11 @@ namespace WebAddressBookTests
         private string homepage = "";
 
         //BirthDay And Anniversary data
-        private string birthday = "";
-        private string birthmonth = "";
+        private string birthday = "-";
+        private string birthmonth = "-";
         private string birthyear = "";
-        private string anniversaryday = "";
-        private string anniversarymonth = "";
+        private string anniversaryday = "-";
+        private string anniversarymonth = "-";
         private string anniversaryyear = "";
 
         //Secondary info data
