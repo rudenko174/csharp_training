@@ -38,24 +38,7 @@ namespace WebAddressBookTests
             contactHelper = new ContactHelper(this);
         }
 
-        public static ApplicationManager GetInstance()
-        {
-            if (IsVa == null)
-            {
-                instance = new ApplicationManager();
-            }
-            return instance;
-        }
-
-
-        public IWebDriver Driver
-        { get
-            {
-                return driver;
-            }
-        }
-
-        public void Stop()
+        ~ApplicationManager()
         {
             try
             {
@@ -64,6 +47,23 @@ namespace WebAddressBookTests
             catch (Exception)
             {
                 // Ignore errors if unable to close the browser
+            }
+        }
+
+        public static ApplicationManager GetInstance()
+        {
+            if (! app.IsValueCreated)
+            {
+                app.Value = new ApplicationManager();
+            }
+            return app.Value;
+        }
+
+
+        public IWebDriver Driver
+        { get
+            {
+                return driver;
             }
         }
 
