@@ -27,26 +27,36 @@ namespace WebAddressBookTests
 
         public ContactHelper Modify(ContactInfoData newContactDate)
         {
+            manager.Navigator.GoToHomePage();
+            IsContactOnThePage();
             InitContactModification();
             FillContactInfoData(newContactDate);
             SubmitContactModification();
-            manager.Navigator.GoToHomePage();
             return this;
         }
 
         public ContactHelper Remove(int p)
-        {            
+        {
+            manager.Navigator.GoToHomePage();
+            IsContactOnThePage();
             driver.FindElements(By.XPath("//input[@name='selected[]']"))[0].Click();
             driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
             driver.SwitchTo().Alert().Accept();
-            manager.Navigator.GoToHomePage();
             return this;
+        }
+
+        public void IsContactOnThePage()
+        {
+            if (!IsElementPresent(By.XPath("//img[@title='Edit']")))
+            {
+                Create(new ContactInfoData("Firstname"));
+                manager.Navigator.GoToHomePage();
+            }
         }
 
         public ContactHelper InitContactModification()
         {
-            driver.FindElements(By.XPath("//img[@title='Edit']"))[3].Click();
-            manager.Navigator.GoToHomePage();
+            driver.FindElements(By.XPath("//img[@title='Edit']"))[0].Click();
             return this;
         }
 

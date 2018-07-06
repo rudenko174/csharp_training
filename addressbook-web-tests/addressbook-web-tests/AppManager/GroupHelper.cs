@@ -30,12 +30,24 @@ namespace WebAddressBookTests
         public GroupHelper Modify(int p, GroupDate newDate)
         {
             manager.Navigator.GoToGroupsPage();
+            IsGroupOnThePage();
             SelectGroup(p);
             InitGroupModification();
             FillGroupForm(newDate);
             SubmitGroupModification();
             manager.Navigator.GoToGroupsPage();
             return this;
+        }
+
+
+
+        public void IsGroupOnThePage()
+        {
+            if (!IsElementPresent(By.XPath("(//input[@name='selected[]'])")))
+            {
+                Create(new GroupDate("Dmytro1"));
+                manager.Navigator.GoToGroupsPage();
+            }
         }
 
         public GroupHelper InitGroupModification()
@@ -53,6 +65,7 @@ namespace WebAddressBookTests
         public GroupHelper Remove(int p)
         {
             manager.Navigator.GoToGroupsPage();
+            IsGroupOnThePage();
             SelectGroup(p);
             RemoveGroup();
             ReturnToGroupsPage();
