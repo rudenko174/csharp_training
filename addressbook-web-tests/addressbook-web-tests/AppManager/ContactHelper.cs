@@ -54,6 +54,12 @@ namespace WebAddressBookTests
             }
         }
 
+        public ContactHelper InitNewContactCreation()
+        {
+            driver.FindElement(By.LinkText("add new")).Click();
+            return this;
+        }
+
         public ContactHelper InitContactModification()
         {
             driver.FindElements(By.XPath("//img[@title='Edit']"))[0].Click();
@@ -66,9 +72,9 @@ namespace WebAddressBookTests
             return this;
         }
 
-        public ContactHelper InitNewContactCreation()
+        public ContactHelper SubmitContactCreation()
         {
-            driver.FindElement(By.LinkText("add new")).Click();
+            driver.FindElement(By.Name("submit")).Click();
             return this;
         }
 
@@ -102,12 +108,6 @@ namespace WebAddressBookTests
             Type(By.Name("address2"), general.SecondaryAddress);
             Type(By.Name("phone2"), general.Phone);
             Type(By.Name("notes"), general.Notes);
-            return this;
-        }
-
-        public ContactHelper SubmitContactCreation()
-        {
-            driver.FindElement(By.Name("submit")).Click();
             return this;
         }
     }
